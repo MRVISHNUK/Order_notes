@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food Order Form</title>
+<script>
+function submitForm() {
+// Retrieve selected options from each select element
+var majorDishes = document.getElementById('majorDishes').selectedOptions;
+var starters = document.getElementById('starters').selectedOptions;
+var softDrink = document.getElementById('softDrink').value;
+// Display selected options
+var selectedDishes = "";
+21
+var selectedStarters = "";
+for (var i = 0; i < majorDishes.length; i++) {
+selectedDishes += majorDishes[i].text + ", ";
+}
+for (var j = 0; j < starters.length; j++) {
+selectedStarters += starters[j].text + ", ";
+}
+alert("Selected Major Dishes: " + selectedDishes + "\nSelected Starters: " + selectedStarters + "\nSelected Soft Drink: " + softDrink);
+}
+</script>
+</head>
+<body>
+<h1>Food Order Form</h1>
+<form onsubmit="submitForm()">
+<label for="majorDishes">Major Dishes:</label>
+<select id="majorDishes" >
+<option>Briyani</option>
+<option>Mutton briyani</option>
+<option>Chicken noddles</option>
+<option>Rice</option>
+</select><br><br>
+<label for="starters">Starters:</label>
+<select id="starters" >
+<option>chicken 65</option>
+<option>Chicken Wings</option>
+<option>Fish 65</option>
+<option>Chicken soups</option>
+</select><br><br>
+<label for="softDrink">Soft Drink:</label>
+<select id="softDrink">
+<option>10000</option>
+<option>Diamond</option>
+<option>Magic moment</option>
+<option>VSOP</option>
+</select><br><br>
+<input type="submit" value="Submit Order">
+</form>
+</body>
+</html>
